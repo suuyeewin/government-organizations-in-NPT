@@ -1,0 +1,35 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;   
+}
+.container
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.logo
+{
+    padding-top: 10px;
+}
+.searchbox
+{
+    position: relative;
+    float: right;
+    margin-top: 3px;
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin-top: 10px;
+ 
+}
+.searchbox input,button
+{
+    padding: 5px;
+    border: 0px;
+    background: transparent;
+}
+.form
+{
+    border:1px solid gray;
+}
+5cab27

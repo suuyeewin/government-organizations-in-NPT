@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>နွေရာသီ ရေရှားပါလှူဒါန်းမှု</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="../bootstrap4/css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap4/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../bootstrap4/css/bsone.css">
+        <link href="../font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="../bootstrap4/js/jquery-1.12.4.js"></script>
+        <script src="../bootstrap4/js/jquery-ui.js"></script>
+        <script src="../bootstrap4/js/popper.min.js" ></script>
+        <script src="../bootstrap4/js/bootstrap.min.js" ></script>
+        <script src="../bootstrap4/js/wash.js" ></script>
+        	    </head>
+    <body>
+                <div id="loader" class="center"></div>
+    <script>
+  $(document).ready(function(){
+    $('#donationgrouptype').on('change', function() {
+      if ( this.value == 'Other')
+      {
+        $("#donator_group").show();
+      }
+      else
+      {
+        $("#donator_group").hide();
+      }
+    });
+});
+</script>
+<div class="container mainform">
+            <nav class="navbar fixed-top navbar-dark bg-success">
+                <a href="index.php"><button type="button" class="tohome btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i>
+                </button></a>
+                <strong style="font-size: large;">ရေဖြန့်ဝေခြင်း သတင်းပို့ရန်</strong>
+            </nav>
+
+            <form action="" style="margin-top:90px" method="post" enctype="multipart/form-data">
+                        <div class="alert alert-success" role="alert">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">ပြည်နယ်/တိုင်း</label>
+                      <select class="form-control" id="sr_filter" name="sr" required>
+                            <option value="">Select</option>
+                            <option value='GA1000001' >ကချင်ပြည်နယ်</option><option value='GA1000002' >ကယားပြည်နယ်</option><option value='GA1000003' >ကရင်ပြည်နယ်</option><option value='GA1000004' >ချင်းပြည်နယ်</option><option value='GA1000005' >စစ်ကိုင်းတိုင်းဒေသကြီး</option><option value='GA1000006' >တနင်္သာရီတိုင်းဒေသကြီး</option><option value='GA1000008' >မကွေးတိုင်းဒေသကြီး</option><option value='GA1000009' >မန္တလေးတိုင်းဒေသကြီး</option><option value='GA1000010' >မွန်ပြည်နယ်</option><option value='GA1000011' >ရခိုင်ပြည်နယ်</option><option value='GA1000012' >ရန်ကုန်တိုင်းဒေသကြီး</option><option value='GA1000013' >ရှမ်းပြည်နယ်</option><option value='GA1000014' >ဧရာဝတီတိုင်းဒေသကြီး</option><option value='GA1000015' >နေပြည်တော်</option><option value='GA1000007' >ပဲခူးတိုင်းဒေသကြီး</option>                        </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">ခရိုင်</label>
+                        <select class="form-control" id="dist_filter" name="dist" required>
+                            <option value="">Select</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">မြို့နယ်</label>
+                        <select class="form-control " id="tws_filter" name="tws" required>
+                            <option value="">Select</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">ကျေးရွာအုပ်စု</label>
+                    <select class="form-control " id="vt_filter" name="vt" >
+                            <option value="">Select</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">ကျေးရွာ</label>
+                        <select class="form-control " id="v_filter" name="v" >
+                            <option value="">Select</option>
+                        </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputPassword1">ကျေးရွာအုပ်စု၊ ကျေးရွာ မတွေ့ပါကရိုက်ထည့်ရန်</label>
+                  <input type="text" name="txtothervillage" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">အိမ်ခြေ (အင်္ဂလိပ်လိုရိုက်ပေးပါ)</label>
+                  <input type="text" name="household" class="form-control numbersOnly">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">လူဦးရေ (အင်္ဂလိပ်လိုရိုက်ပေးပါ)</label>
+                  <input type="text" name="population" class="form-control numbersOnly">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">ဖြန့်ဝေသည့် ရေဂါလံ</label>
+                  <textarea name="total_gallon" class="form-control" ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">လှူဒါန်းသည့် အဖွဲ့အစည်း</label>
+                  <select class="form-control" name="donationgrouptype" id="donationgrouptype">
+                      <option value="DRD">DRD</option>
+                      <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group" style="display:none" id="donator_group">
+                  <label for="exampleInputPassword1">အဖွဲ့အစည်း နာမည်ရိုက်ပါ</label>
+                  <textarea name="donator_group" class="form-control" ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">ရေလှူဒါန်း ရသည်ံ အကြောင်းရင်း</label>
+                  <textarea name="donator_reason" class="form-control" ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">လှူဒါန်း တန်းဖိုး (စက်သုံးဆီ၊ ရေသည်ယဉ်) ကျပ်သန်း</label>
+                  <textarea name="total_amount" class="form-control" ></textarea>
+                </div>
+
+                
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">ရေလှူဒါန်းသည့် ရက်စွဲ</label>
+                  <input type="text" name="donation_date" class="form-control datepicker" >
+                </div>
+
+                
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">မှတ်တမ်းဓါတ်ပုံ</label>
+                  <input type="file" name="donationimage1" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">မှတ်တမ်းဓါတ်ပုံ</label>
+                  <input type="file" name="donationimage2" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">မှတ်တမ်းဓါတ်ပုံ</label>
+                  <input type="file" name="donationimage3" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">မှတ်တမ်းဓါတ်ပုံ</label>
+                  <input type="file" name="donationimage4" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">မှတ်တမ်းဓါတ်ပုံ</label>
+                  <input type="file" name="donationimage5" class="form-control">
+                </div>
+            </div>
+            
+
+
+              
+                <button type="submit" name="btnWaterDonation" class="form-control btn btn-primary"> သတင်းပို့ရန် နှိပ်ပါ</button>
+              </form>
+</div>        
+
+        
+    
+    <script> 
+        document.onreadystatechange = function() { 
+            if (document.readyState !== "complete") { 
+                document.querySelector( 
+                  "body").style.visibility = "hidden"; 
+                document.querySelector( 
+                  "#loader").style.visibility = "visible"; 
+            } else { 
+                document.querySelector( 
+                  "#loader").style.display = "none"; 
+                document.querySelector( 
+                  "body").style.visibility = "visible"; 
+            } 
+        }; 
+    </script> 
+    </body>
+</html>
